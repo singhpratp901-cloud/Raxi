@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAXI WIN - Download App</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+:root{
+    --red:#c40000;
+    --red2:#ff2400;
+    --dark:#050505;
+    --dark2:#101010;
+    --gold:#ffd84a;
+    --gold2:#ff9900;
+    --light:#fff;
+    --muted:#aaa;
+}
+
+/* ================= BACKGROUND ================= */
+
+body{
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(130,0,0,.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0% 60%,
+            rgba(130,0,0,.22),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 100% 70%,
+            rgba(255,80,0,.12),
+            transparent 30%
+        ),
+        #050505;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(3,3,3,.93);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,190,30,.25);
+}
+
+.navbar{
+    max-width:1200px;
+    height:78px;
+    margin:auto;
+    padding:8px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:23px;
+    font-weight:900;
+    color:#ffd94e;
+}
+
+.logo-brand img{
+    width:58px;
+    height:58px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #ffc928;
+    box-shadow:
+        0 0 15px rgba(255,90,0,.35);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:26px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#ffd64a;
+}
+
+.nav-download{
+    color:#160700!important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff07c,
+            #ffad00,
+            #ff3000
+        );
+
+    padding:11px 20px;
+    border-radius:30px;
+
+    box-shadow:
+        0 8px 25px rgba(255,70,0,.25);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 20px 80px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    left:-180px;
+    top:100px;
+
+    border-radius:50%;
+
+    background:#900000;
+    filter:blur(100px);
+    opacity:.25;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    right:-180px;
+    bottom:-100px;
+
+    border-radius:50%;
+
+    background:#ff3d00;
+    filter:blur(110px);
+    opacity:.15;
+}
+
+.hero-container{
+    position:relative;
+    z-index:2;
+
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+
+    gap:55px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    color:#ffd94b;
+
+    background:rgba(255,170,0,.07);
+
+    border:1px solid rgba(255,210,70,.45);
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.hero h1{
+    margin-top:18px;
+
+    font-size:clamp(55px,8vw,100px);
+
+    line-height:.9;
+
+    font-weight:1000;
+
+    letter-spacing:-5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff3a0,
+            #ffd52e 30%,
+            #ff7b00 65%,
+            #bd1000
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    filter:
+        drop-shadow(
+            0 12px 25px rgba(255,50,0,.3)
+        );
+}
+
+.hero h2{
+    margin-top:22px;
+    font-size:27px;
+}
+
+.hero-text{
+    max-width:570px;
+
+    margin-top:15px;
+
+    color:#aaa;
+
+    font-size:17px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 27px;
+
+    border-radius:8px;
+
+    font-weight:900;
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-primary{
+    color:#180700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff079,
+            #ffae00,
+            #ff2800
+        );
+
+    box-shadow:
+        0 12px 35px rgba(255,60,0,.25);
+}
+
+.btn-outline{
+    color:#ffd94a;
+
+    border:1px solid #a96c00;
+
+    background:rgba(255,170,0,.04);
+}
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo-frame{
+    width:min(470px,90vw);
+    aspect-ratio:1;
+
+    padding:12px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(#080808,#080808) padding-box,
+        linear-gradient(
+            135deg,
+            #fff2a0,
+            #ffb300,
+            #8b0000,
+            #ffd43d
+        ) border-box;
+
+    border:6px solid transparent;
+
+    box-shadow:
+        0 0 35px rgba(255,50,0,.35),
+        0 0 100px rgba(180,0,0,.2);
+
+    animation:logoGlow 3s infinite alternate;
+}
+
+.logo-frame img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+}
+
+@keyframes logoGlow{
+
+    from{
+        transform:scale(1);
+        filter:brightness(.95);
+    }
+
+    to{
+        transform:scale(1.025);
+        filter:brightness(1.1);
+    }
+
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#ffd64a;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    margin-top:8px;
+
+    font-size:
+        clamp(30px,5vw,46px);
+}
+
+.section-title p{
+    max-width:650px;
+
+    margin:10px auto 0;
+
+    color:#999;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    background:rgba(255,255,255,.018);
+
+    border-top:
+        1px solid rgba(255,190,30,.08);
+
+    border-bottom:
+        1px solid rgba(255,190,30,.08);
+}
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+    padding:28px;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.012)
+        );
+
+    border:
+        1px solid rgba(255,190,30,.13);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(255,190,30,.45);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.4);
+}
+
+.card-icon{
+    width:54px;
+    height:54px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe04d,
+            #ff3b00
+        );
+
+    color:#170700;
+
+    font-size:25px;
+
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:8px;
+    color:#ffe78a;
+}
+
+.card p{
+    color:#999;
+    font-size:14px;
+}
+
+/* ================= DOWNLOAD STEPS ================= */
+
+.steps{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+}
+
+.step{
+    text-align:center;
+    padding:15px;
+}
+
+.step-number{
+    width:60px;
+    height:60px;
+
+    margin:0 auto 17px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe14c,
+            #ff4100
+        );
+
+    color:#180700;
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    color:#999;
+    font-size:14px;
+}
+
+/* ================= SHOWCASE ================= */
+
+.showcase{
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(130,0,0,.22),
+            transparent 60%
+        );
+}
+
+.showcase-box{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
+
+    padding:40px;
+
+    border-radius:22px;
+
+    border:
+        1px solid rgba(255,190,30,.13);
+
+    background:
+        rgba(0,0,0,.3);
+}
+
+.showcase h2{
+    font-size:40px;
+    margin:15px 0;
+}
+
+.showcase p{
+    color:#aaa;
+}
+
+.showcase ul{
+    list-style:none;
+    margin:20px 0;
+}
+
+.showcase li{
+    color:#ddd;
+    margin:9px 0;
+}
+
+.showcase li:before{
+    content:"✓";
+
+    color:#ffd43b;
+
+    font-weight:900;
+
+    margin-right:10px;
+}
+
+/* PHONE */
+
+.phone{
+    width:235px;
+    height:455px;
+
+    margin:auto;
+
+    padding:18px;
+
+    border:
+        8px solid #252525;
+
+    border-radius:35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #850000,
+            #180000 55%,
+            #030303
+        );
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.6);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.phone img{
+    width:155px;
+    height:155px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin:auto;
+}
+
+.phone-title{
+    color:#ffd447;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    margin-top:15px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+
+    border-radius:15px;
+
+    border:
+        1px solid rgba(255,190,30,.13);
+}
+
+table{
+    width:100%;
+
+    min-width:600px;
+
+    border-collapse:collapse;
+
+    background:rgba(0,0,0,.3);
+}
+
+th,
+td{
+    padding:16px 20px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+
+    text-align:left;
+}
+
+th{
+    color:#ffd84a;
+
+    background:
+        rgba(255,170,0,.07);
+}
+
+td{
+    color:#bbb;
+}
+
+/* ================= REVIEWS ================= */
+
+.review{
+    color:#bbb;
+}
+
+.review-name{
+    margin-top:15px;
+
+    color:#ffd54a;
+
+    font-weight:bold;
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+    max-width:800px;
+    margin:auto;
+}
+
+details{
+    margin-bottom:12px;
+
+    padding:18px 20px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,190,30,.12);
+
+    border-radius:10px;
+}
+
+summary{
+    cursor:pointer;
+
+    color:#ffe68b;
+
+    font-weight:bold;
+}
+
+details p{
+    padding-top:13px;
+
+    color:#999;
+
+    font-size:14px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle,
+            #680000 0%,
+            #190000 42%,
+            #050505 80%
+        );
+}
+
+.cta-image{
+    width:120px;
+    height:120px;
+
+    margin:0 auto 15px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:2px solid #ffd34a;
+
+    box-shadow:
+        0 0 30px rgba(255,80,0,.35);
+}
+
+.cta h2{
+    font-size:50px;
+
+    color:#ffe06a;
+}
+
+.cta p{
+    max-width:650px;
+
+    margin:10px auto 25px;
+
+    color:#aaa;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:50px 20px 25px;
+
+    background:#020202;
+}
+
+.footer-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap:40px;
+}
+
+footer h3{
+    color:#ffd448;
+
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#777;
+
+    font-size:14px;
+}
+
+footer a{
+    display:block;
+
+    margin:8px 0;
+}
+
+footer a:hover{
+    color:#ffd448;
+}
+
+.copyright{
+    max-width:1100px;
+
+    margin:35px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid #151515;
+
+    color:#555;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:#080808;
+
+        flex-direction:column;
+
+        border-bottom:
+            1px solid #4b2500;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .showcase-box{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .logo-brand{
+        font-size:18px;
+    }
+
+    .logo-brand img{
+        width:46px;
+        height:46px;
+    }
+
+    .hero{
+        padding-top:115px;
+    }
+
+    .hero h1{
+        font-size:64px;
+    }
+
+    .cards,
+    .steps,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .showcase-box{
+        padding:22px;
+    }
+
+    .showcase h2{
+        font-size:31px;
+    }
+
+    .phone{
+        width:205px;
+        height:395px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="#home" class="logo-brand">
+
+        <img id="headerLogo" alt="RAXI WIN">
+
+        <span>RAXI WIN</span>
+
+    </a>
+
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#features">Features</a>
+        </li>
+
+        <li>
+            <a href="#download">Download</a>
+        </li>
+
+        <li>
+            <a href="#games">Games</a>
+        </li>
+
+        <li>
+            <a href="#faq">FAQ</a>
+        </li>
+
+        <li>
+            <a href="#download" class="nav-download">
+                Download App
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+
+    <div>
+
+        <span class="badge">
+            RAXI WIN OFFICIAL APP
+        </span>
+
+
+        <h1>
+            RAXI WIN
+        </h1>
+
+
+        <h2>
+            Next Generation Mobile Experience
+        </h2>
+
+
+        <p class="hero-text">
+            Experience a modern, responsive and mobile-first
+            RAXI WIN interface with quick navigation and
+            a powerful red and gold visual design.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#download"
+                class="btn btn-primary">
+                ↓ DOWNLOAD APP
+            </a>
+
+
+            <a
+                href="#features"
+                class="btn btn-outline">
+                EXPLORE FEATURES
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN LOGO IMAGE -->
+
+    <div class="hero-image">
+
+        <div class="logo-frame">
+
+            <img
+                id="heroLogo"
+                alt="RAXI WIN Logo">
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="features" id="features">
+
+<div class="container">
+
+
+    <div class="section-title">
+
+        <span>
+            WHY RAXI WIN
+        </span>
+
+        <h2>
+            Everything In One Place
+        </h2>
+
+        <p>
+            A modern interface designed for a simple
+            and responsive mobile experience.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Fast Experience
+            </h3>
+
+            <p>
+                Lightweight layout designed for
+                smooth mobile browsing.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📱
+            </div>
+
+            <h3>
+                Mobile Friendly
+            </h3>
+
+            <p>
+                Responsive design automatically adapts
+                to different screen sizes.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎮
+            </div>
+
+            <h3>
+                Multiple Games
+            </h3>
+
+            <p>
+                Organize different entertainment
+                categories in one interface.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎁
+            </div>
+
+            <h3>
+                Special Offers
+            </h3>
+
+            <p>
+                Highlight your promotions and
+                important updates.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🌐
+            </div>
+
+            <h3>
+                Easy Navigation
+            </h3>
+
+            <p>
+                Simple sections help visitors quickly
+                find what they need.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🚀
+            </div>
+
+            <h3>
+                Modern Design
+            </h3>
+
+            <p>
+                Red, black and gold visual style
+                built for your brand.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DOWNLOAD STEPS
+===================================================== -->
+
+<section id="download">
+
+<div class="container">
+
+
+    <div class="section-title">
+
+        <span>
+            GET STARTED
+        </span>
+
+        <h2>
+            Download RAXI WIN
+        </h2>
+
+        <p>
+            Follow these simple steps to get started.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>
+                Visit Website
+            </h3>
+
+            <p>
+                Open the RAXI WIN website.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>
+                Tap Download
+            </h3>
+
+            <p>
+                Select the download button.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>
+                Install
+            </h3>
+
+            <p>
+                Install the application on your device.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                4
+            </div>
+
+            <h3>
+                Open App
+            </h3>
+
+            <p>
+                Launch RAXI WIN and continue.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div style="text-align:center;margin-top:35px">
+
+        <a
+            href="#"
+            class="btn btn-primary">
+            ↓ DOWNLOAD RAXI WIN
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     APP SHOWCASE
+===================================================== -->
+
+<section class="showcase" id="games">
+
+<div class="container">
+
+
+    <div class="showcase-box">
+
+
+        <div>
+
+            <span class="badge">
+                RAXI WIN APP
+            </span>
+
+
+            <h2>
+                Made For Mobile
+            </h2>
+
+
+            <p>
+                A responsive layout designed to give
+                visitors a clean and convenient
+                experience across mobile and desktop.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    Responsive mobil
